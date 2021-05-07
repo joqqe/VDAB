@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button class="back">◁</button>
+        <button class="next">▷</button>
+        <button class="play">▶</button>
+    </header>
+
+    <aside>
+        <nav>
+            <label class="active">Home</label>
+            <label>Search</label>
+            <label>Your Library</label>
+            <hr />
+        </nav>
+    </aside>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="rowSelect(event)">
+                    <td>This is a title 1</td>
+                </tr>
+                <tr onclick="rowSelect(event)" class="active">
+                    <td>This is a title 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <button class="back">◁</button>
+        <button class="play">▶</button>
+        <button class="next">▷</button>
+    </footer>
+
+    <div class="popup">
+        <div class="popup-overlay"></div>
+
+        <div class="popup-content">
+            <h1>Welkom bij Spotify</h1>
+
+            <button>Ga verder...</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
