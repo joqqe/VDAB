@@ -1,0 +1,247 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 60px 1fr 90px;
+    grid-template-areas: "aside header" "aside main" "footer footer";
+}
+
+
+/* --- HEADER --- */
+header {
+    grid-area: header;
+    background-color: #200d0a;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    align-items: center;
+    grid-gap: 24px;
+}
+
+header .play {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #1db954;
+    color: #fff;
+	cursor: pointer;
+}
+
+header .play:hover {
+    transform: scale(1.05);
+}
+
+header .back,
+header .next  {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* --- MAIN --- */
+main {
+    grid-area: main;
+    background-color: #121212;
+    padding: 24px 48px;
+}
+
+main table {
+    color: #b3b3b3;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main table thead tr {
+    border-bottom: 1px solid ;
+    height: 50px;
+    cursor: default;
+    font-size: 14px;
+}
+
+main table thead tr th {
+    text-transform: uppercase;
+}
+
+main table thead tr th:not(:last-of-type) {
+    text-align: start;
+}
+
+main table thead tr th,
+main table tbody tr td:last-of-type {
+    text-align: end;
+}
+
+main table tbody tr {
+    height: 50px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+main table thead tr th:first-of-type,
+main table tbody tr td:first-of-type {
+    border-radius: 4px 0 0 4px;
+    padding-left: 32px;
+}
+
+main table tbody tr td:nth-of-type(2) {
+    color: #fff;
+}
+
+main table thead tr th:last-of-type,
+main table tbody tr td:last-of-type {
+    border-radius: 0 4px 4px 0;
+    padding-right: 32px;
+
+}
+
+main table tbody tr:hover {
+    background-color: #2a2a2a;
+}
+
+main table tbody tr.active {
+    background-color: #595959;
+}
+
+
+/* --- ASIDE --- */
+aside {
+    grid-area: aside;
+    background-color: #000;
+}
+
+aside nav {
+    margin-top: 24px;
+    padding: 0 12px;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+aside nav label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    color: #b3b3b3;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+aside nav label:hover {
+    color: #fff;
+    transition: color 0.4s;
+}
+
+aside nav label.active {
+    color: #fff;
+    background-color: #282828;
+}
+
+aside nav hr {
+    border-color: #282828;
+    width: 100%;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    grid-area: footer;
+    background-color: #181818;
+    border-top: 1px solid #282828;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 24px;
+    align-items: start;
+    padding: 16px;
+}
+
+footer .play {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+	cursor: pointer;
+}
+
+footer .play:hover {
+    transform: scale(1.05);
+}
+
+footer .back,
+footer .next  {
+    margin-top: 6px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* --- POPUP  --- */
+.popup {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-items: center;
+}
+
+.popup.show {
+    display: grid;
+}
+
+.popup .popup-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    opacity: 0.5;
+    
+    z-index: 100;
+}
+
+.popup .popup-content {
+    position: absolute;
+    top: 150px;
+    z-index: 200;
+    height: 400px;
+    width: 600px;
+    background-color: #fff;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 5px;
+    padding: 24px;
+    display: grid;
+    justify-items: center;
+}
+
+.popup .popup-content button {
+    height: 40px;
+    border-radius: 20px;
+    padding: 6px 24px;
+    border: 2px solid black;
+    background-color: transparent;
+    width: 130px;
+    cursor: pointer;
+}
+
+.popup .popup-content button:hover {
+    transform: scale(1.05);
+}

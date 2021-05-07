@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>iets</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var arr = [ "title1", "title2"];
+        var table = document.querySelector("table tbody");
+        var existsRows = table.querySelectorAll("table tbody tr");
+
+        for (const tr of existsRows) {
+            tr.remove();
+        }
+
+        debugger
+
+        for (var item of arr) {
+            var row = document.createElement("tr");
+            var cell = document.createElement("td");
+            var text = document.createTextNode(item);
+
+            cell.appendChild(text);
+            row.appendChild(cell);
+            table.appendChild(row);
+        }
+    </script>
+</body>
+</html>
