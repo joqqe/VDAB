@@ -1,0 +1,5 @@
+Tevens heb ik nog opgezocht hoe je itereert over de properties van een object binnen C#. 
+Zoals ik al dacht dient dit te gebeuren d.m.v. reflection. Dus op een niet alledaagse manier. 
+
+De code om dit te doen kan je in onderstaande link terugvinden:
+https://stackoverflow.com/questions/8151888/c-sharp-iterate-through-class-properties#answers
