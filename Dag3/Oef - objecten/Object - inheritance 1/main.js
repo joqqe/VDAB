@@ -21,3 +21,8 @@ function Car(power, make, model, year) {
 
 var audiA1 = Car('100pk', 'Audi', 'A1', 2021);
 console.log(audiA1.start()); // "100pk doet vroem vroem..."
+
+console.log("Car: ", audiA1 instanceof Car); // false
+console.log("Vehicle: ", audiA1 instanceof Vehicle); // false
+
+console.log(audiA1.constructor.name); // Object
