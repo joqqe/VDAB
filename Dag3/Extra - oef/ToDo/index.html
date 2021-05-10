@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input>
+    <button>Add</button>
+    <ul></ul>
+
+    <script>
+        var input = document.querySelector("input");
+        var button = document.querySelector("button");
+        var ul = document.querySelector("ul");
+        var toDos = [];
+
+        function renderToDos() {
+            ul.innerHTML = "";
+
+            for (const toDo of toDos) {
+                var li = document.createElement("li");
+                var txt = document.createTextNode(toDo);
+
+                li.onclick = removeToDo;
+                li.appendChild(txt);
+                ul.appendChild(li);
+            }
+        }
+
+        function addToDo() {
+            toDos.push(input.value);
+
+            renderToDos();
+        }
+
+        function removeToDo(e) {
+            var index = toDos.findIndex(x => x == e.currentTarget.innerHTML);
+            toDos.splice(index, 1);
+
+            renderToDos();
+        }
+
+        button.addEventListener('click', addToDo);
+    </script>
+</body>
+</html>

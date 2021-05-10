@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <button id="back"><</button>
+    <img>
+    <button id="next">></button>
+
+    <script>
+        var img = document.querySelector("img");
+        var currentIndex = 0;
+        var images = [
+            "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?cs=srgb&dl=pexels-brandon-montrone-1179229.jpg&fm=jpg",
+            "https://images.pexels.com/photos/1591305/pexels-photo-1591305.jpeg?cs=srgb&dl=pexels-abdallah-maqboul-1591305.jpg&fm=jpg",
+            "https://images.pexels.com/photos/1376201/pexels-photo-1376201.jpeg?cs=srgb&dl=pexels-daria-shevtsova-1376201.jpg&fm=jpg",
+            "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?cs=srgb&dl=pexels-michael-block-3225517.jpg&fm=jpg"
+        ];
+        var btnBack = document.querySelector("#back");
+        var btnNext = document.querySelector("#next");
+
+        function navigate(direction) {
+             if (direction === "NEXT") {
+                currentIndex++;
+
+                if (currentIndex === images.length)
+                    currentIndex = 0;
+             }
+            
+            if (direction === "BACK") {
+                currentIndex--;
+
+                if (currentIndex === -1)
+                    currentIndex = images.length - 1;
+            }
+
+            setImgSrc(images[currentIndex]);
+        }
+
+        function setImgSrc(source) {
+            img.src = source;
+        }
+    
+        btnBack.addEventListener('click', function(e) {
+            navigate("BACK");
+        });
+
+        btnNext.addEventListener('click', function(e) {
+            navigate("NEXT");
+        });
+
+        setImgSrc(images[0]);
+
+        // setInterval(function() {
+        //     navigate("NEXT");
+        // }, 5000);
+    </script>
+</body>
+</html>
