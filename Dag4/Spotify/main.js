@@ -51,6 +51,8 @@ function listenToRowSelection() {
 
 // Voeg de Web-API function Fetch toe.
 // http://localhost:5000/json
+// of
+// data.json
 
 // songs = ?;
 // renderTable();
