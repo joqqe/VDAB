@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Support</title>
+
+    <script>
+        // Check if JS is enabled
+        document.documentElement.classList.remove("no-js");
+        document.documentElement.classList.add("js");
+    </script>
+
+    <script>
+        // Check if CSS feature is supported
+        function cssPropertyValueSupported(prop, value) {
+            var d = document.createElement('div');
+            d.style[prop] = value;
+            return d.style[prop] === value;
+        }
+        
+        if(cssPropertyValueSupported('display', 'grid'))
+            document.documentElement.classList.add("grid-support");
+        else
+            document.documentElement.classList.add("no-grid-support");
+    </script>
+</head>
+<body>
+
+    <noscript>
+        Please enable JavaScript!
+    </noscript>
+</body>
+</html>
